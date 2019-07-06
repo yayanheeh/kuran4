@@ -1,0 +1,8 @@
+<div>
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="edition in editions">
+			<a ng-href="#!/surahs/{{edition.identifier}}" >{{edition.englishName}}</a>
+			<div class="pull-right">[ {{edition.language}} ] [ {{edition.type}} ]</div>
+		</li>
+	</ul>
+</div>

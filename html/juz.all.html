@@ -1,0 +1,5 @@
+<div class="row">
+	<div ng-repeat="juzNumber in juzNumbers" ng-class="($index+1)%10===0 ? 'col-md-3' : 'col-md-1'">
+		<a ui-sref="juz({identifier:identifier,juzNumber:juzNumber})">Juz {{juzNumber}}</a>
+	</div>
+</div>

@@ -1,0 +1,5 @@
+<div class="row">
+	<div ng-repeat="surah in surahs" class="col-md-2">
+			<a ui-sref="ayahs({identifier:identifier,surahNumber:surah.number})"> {{surah.number}}) {{surah.englishName}}</a>
+		</div>
+</div>

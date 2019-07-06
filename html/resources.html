@@ -1,0 +1,5 @@
+<div ng-init="chooseResources();">
+	<div ng-repeat="resource in resources">
+		<a ui-sref="surahs({identifier:resource.identifier})">{{resource.englishName}} ({{resource.name}})</a>
+	</div>
+</div>

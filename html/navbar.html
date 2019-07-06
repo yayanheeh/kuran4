@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary" ng-init="getEditions();getTypes(type);">
+  <a class="navbar-brand" ui-sref="surahs({identifier:identifier})">Quran App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" ui-sref="surahs({identifier:identifier})">Surahs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ui-sref="listJuz({identifier:identifier})">Juz</a>
+      </li>
+
+      <li class=" nav-item dropdown ">
+        <a class="nav-link dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Language - {{language}}
+        </a>
+        <div class="dropdown-menu row editionsDropdown" aria-labelledby="dropdownMenuButton2">
+          <a class="dropdown-item" ng-click="setLanguage(language)" ng-repeat="language in languages">
+            {{language}}
+          </a>
+        </div>
+      </li>
+
+      <li class=" nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Editions - {{identifier}}
+        </a>
+        <div class="dropdown-menu row editionsDropdown" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" ng-click="saveIdentifier(edition.identifier);" ng-repeat="edition in editions" ng-if="edition.language === language">
+            <div>{{edition.englishName}}</div> 
+            <div>[ {{edition.language}} ] [ {{edition.type}} ]</div></a>
+        </div>
+      </li>
+
+      <li class=" nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Types - {{type}}
+        </a>
+        <div class="dropdown-menu row" aria-labelledby="dropdownMenuButton2">
+          <a class="dropdown-item" ui-sref="resources({type:type})" ng-repeat="type in types">
+            {{type}}
+          </a>
+        </div>
+      </li>      
+    </ul>
+  </div>
+</nav>
+
